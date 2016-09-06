@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.training.lfallon.androidreyclerviewradio.R;
+import com.training.lfallon.androidreyclerviewradio.adapters.StationsAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,6 +57,9 @@ public class StationsFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.recyclerViewStations);
         recyclerView.setHasFixedSize(true);
+
+        StationsAdapter stationsAdapter = new StationsAdapter();
+        recyclerView.setAdapter(stationsAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
