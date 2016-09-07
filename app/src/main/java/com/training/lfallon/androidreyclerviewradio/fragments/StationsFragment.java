@@ -16,9 +16,9 @@ public class StationsFragment extends Fragment {
 
     private static final String ARG_STATION_TYPE = "station_type";
 
-    private static final int STATION_TYPE_FEATURED = 0;
-    private static final int STATION_TYPE_RECENT = 1;
-    private static final int STATION_TYPE_PARTY = 2;
+    public static final int STATION_TYPE_FEATURED = 0;
+    public static final int STATION_TYPE_RECENT = 1;
+    public static final int STATION_TYPE_PARTY = 2;
 
     private int mStationType = -1;
 
@@ -51,7 +51,7 @@ public class StationsFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.recyclerViewStations);
         recyclerView.setHasFixedSize(true);
 
-        StationsAdapter stationsAdapter = new StationsAdapter(mStationType);
+        StationsAdapter stationsAdapter = new StationsAdapter(mStationType, getContext());
         recyclerView.setAdapter(stationsAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());

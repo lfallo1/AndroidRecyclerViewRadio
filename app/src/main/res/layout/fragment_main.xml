@@ -20,20 +20,41 @@
                 android:textSize="24sp"
                 android:text="It's Friday Evening"
                 android:textColor="#111"
-                android:id="@+id/titleOne"/>
+                android:id="@+id/topTitleOne"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="#777"
                 android:text="Play something cool!"
-                android:id="@+id/subTitleOne"/>
+                android:id="@+id/topSubTitle"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/containerTopRow" />
-            
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="Some of the best ever"
+                android:textColor="#111"
+                android:id="@+id/middleTtle"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#777"
+                android:text="Listen to it here!!"
+                android:id="@+id/middleSubTitleOne"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/containerMiddleRow" />
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
