@@ -14,21 +14,22 @@ import com.training.lfallon.androidreyclerviewradio.adapters.StationsAdapter;
 
 public class StationsFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_STATION_TYPE = "station_type";
 
-    private String mParam1;
-    private String mParam2;
+    private static final int STATION_TYPE_FEATURED = 0;
+    private static final int STATION_TYPE_RECENT = 1;
+    private static final int STATION_TYPE_PARTY = 2;
+
+    private int mStationType = -1;
 
 
     public StationsFragment() {
     }
 
-    public static StationsFragment newInstance(String param1, String param2) {
+    public static StationsFragment newInstance(int stationType) {
         StationsFragment fragment = new StationsFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt(ARG_STATION_TYPE, stationType);
         fragment.setArguments(args);
         return fragment;
     }
@@ -37,8 +38,7 @@ public class StationsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mStationType = getArguments().getInt(ARG_STATION_TYPE);
         }
     }
 
@@ -51,7 +51,7 @@ public class StationsFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.recyclerViewStations);
         recyclerView.setHasFixedSize(true);
 
-        StationsAdapter stationsAdapter = new StationsAdapter();
+        StationsAdapter stationsAdapter = new StationsAdapter(mStationType);
         recyclerView.setAdapter(stationsAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
